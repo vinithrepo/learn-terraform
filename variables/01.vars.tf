@@ -1,5 +1,5 @@
 variable "name" {
-  value = "vinith"
+  default = "vinith"
 }
 
 output "print name" {
