@@ -2,6 +2,6 @@ variable "name" {
   default = "vinith"
 }
 
-output "print name" {
+output "name" {
   value = var.name
 }
