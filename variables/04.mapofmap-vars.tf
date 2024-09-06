@@ -15,6 +15,6 @@ variable "fruit_stock_with_price" {
   }
 }
 
-output "fruit_price" {
-  value = var.fruit_stock_with_price["apple"].location
+output "fruit_sale" {
+  value = var.fruit_stock_with_price["apple"].for_sale
 }
