@@ -20,5 +20,5 @@ output "fruits_second" {
 }
 
 output "fruits_name" {
-  value = "${ var.fruits_name[0] }"
+  value = "${ var.fruits_name[0-1] }"
 }
