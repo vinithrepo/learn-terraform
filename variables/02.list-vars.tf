@@ -2,7 +2,8 @@
 variable "fruits" {
   default = [
   "apple", #comma should be here to separate the item
-  "banana"
+  "banana",
+    "guva"
   ]
 }
 
@@ -20,5 +21,5 @@ output "fruits_second" {
 }
 
 output "fruits_name" {
-  value = "${ var.fruits_name[0-1] }"
+  value = "${ var.fruits_name[0] }, ${var.fruits[2]} "
 }
