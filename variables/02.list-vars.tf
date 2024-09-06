@@ -1,10 +1,17 @@
 variable "fruits" {
   default = [
-  "apple",
+  "apple", #comma should be here to separate the item
   "banana"
   ]
 }
 
 output "fruits_first" {
   value = var.fruits[0]
+}
+variable "fruits_name" {
+  default = [ "apple", "banana" ]
+}
+
+output "fruits_second" {
+  value = var.fruits_name[1]
 }
