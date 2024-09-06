@@ -17,3 +17,9 @@ variable "item_name" {
 output "item" {
   value = " name is = ${var.item_name} "
 }
+variable "item_name_is" {
+  default = "cellphone"
+}
+output "item_name" {
+  value = " ${var.item_name_is} "
+}
