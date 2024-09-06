@@ -3,5 +3,5 @@ variable "fruits_list" {
 }
 
 output "fruits_fun" {
-  value = elements(var.fruits_list, 2)
+  value = element(var.fruits_list, 2)
 }
