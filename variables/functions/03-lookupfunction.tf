@@ -11,4 +11,5 @@ variable "fruits_details" {
 
 output "looking_for" {
   value = lookup(var.fruits_details["grapes"],"price", 9)
+  //try(var.fruits_details["apple"].price, 0)
 }
