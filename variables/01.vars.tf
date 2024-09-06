@@ -11,3 +11,9 @@ variable "fruit_name" {
 output "fruit_name_is" {
   value = var.fruit_name
 }
+variable "item_name" {
+  default = "mobile"
+}
+output "item" {
+  value = " name is = var.item_name "
+}
