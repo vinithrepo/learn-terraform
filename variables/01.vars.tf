@@ -15,5 +15,5 @@ variable "item_name" {
   default = "mobile"
 }
 output "item" {
-  value = " name is = var.item_name "
+  value = " name is = ${var.item_name} "
 }
