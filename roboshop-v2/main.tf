@@ -7,6 +7,9 @@ variable "instance_type" {
 variable "vpc_security_group_ids" {
   value = ["sg-0ad8ec6873fafd140"]
 }
+variable "zone_id" {
+  value = "Z0345275C3S6UDSOR4CU"
+}
 
 
 resource "aws_instance" "frontend" {
@@ -19,7 +22,7 @@ resource "aws_instance" "frontend" {
   }
 }
 resource "aws_route53_record" "frontend" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "frontend-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
@@ -27,64 +30,64 @@ resource "aws_route53_record" "frontend" {
 }
 
 resource "aws_instance" "mongodb" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "mongodb"
   }
 }
 resource "aws_route53_record" "mongodb" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "mongodb-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.mongodb.private_ip]
 }
 resource "aws_instance" "catalogue" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "catalogue"
   }
 }
 resource "aws_route53_record" "catalogue" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "catalogue-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.catalogue.private_ip]
 }
 resource "aws_instance" "user" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "user"
   }
 }
 resource "aws_route53_record" "user" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "user-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.user.private_ip]
 }
 resource "aws_instance" "cart" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "cart"
   }
 }
 resource "aws_route53_record" "cart" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "cart-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
@@ -92,16 +95,16 @@ resource "aws_route53_record" "cart" {
 }
 
 resource "aws_instance" "redis" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "redis"
   }
 }
 resource "aws_route53_record" "redis" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "redis-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
@@ -109,16 +112,16 @@ resource "aws_route53_record" "redis" {
 }
 
 resource "aws_instance" "mysql" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "mysql"
   }
 }
 resource "aws_route53_record" "mysql" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "mysql-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
@@ -127,16 +130,16 @@ resource "aws_route53_record" "mysql" {
 
 
 resource "aws_instance" "shipping" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "shipping"
   }
 }
 resource "aws_route53_record" "shipping" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "shipping-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
@@ -144,16 +147,16 @@ resource "aws_route53_record" "shipping" {
 }
 
 resource "aws_instance" "rabbitmq" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "rabbitmq"
   }
 }
 resource "aws_route53_record" "rabbitmq" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "rabbitmq-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
@@ -162,16 +165,16 @@ resource "aws_route53_record" "rabbitmq" {
 
 
 resource "aws_instance" "payment" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = "payment"
   }
 }
 resource "aws_route53_record" "payment" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "payment-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
@@ -179,15 +182,15 @@ resource "aws_route53_record" "payment" {
 }
 
 resource "aws_instance" "dispatch" {
-  ami           = "ami-0b4f379183e5706b9"
-  instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-0ad8ec6873fafd140"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
   tags = {
     Name = "dispatch"
   }
 }
 resource "aws_route53_record" "dispatch" {
-  zone_id = "Z0345275C3S6UDSOR4CU"
+  zone_id = var.zone_id
   name    = "dispatch-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
