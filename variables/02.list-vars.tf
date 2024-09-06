@@ -19,7 +19,7 @@ variable "fruits_name" {
 output "fruits_second" {
   value = var.fruits_name[1]
 }
-
+//ex3
 output "fruits_name" {
   value = "${ var.fruits_name[0] }, ${var.fruits[2]} "
 }
