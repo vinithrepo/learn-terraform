@@ -1,4 +1,4 @@
-//ex1
+//ex1 single variable
 variable "name" {
   default = "vinith"
 }
