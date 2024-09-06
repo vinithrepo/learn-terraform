@@ -6,10 +6,16 @@ variable "fruit_stock" {
 
   }
 }
-
+//ex1
 output "fruit_stock_apple" {
   value = var.fruit_stock["apple"]
 }
-output "fruit_stock_banana" {
-  value = " ${var.fruit_stock["banana"]} , ${var.fruit_stock["guva"]}"
+//ex2
+output "fruit_stock" {
+  value = " ${var.fruit_stock["apple"]} , ${var.fruit_stock["guva"]}"
 }
+//ex3
+//output "fruit_stock" {
+  //value = var.fruit_stock["banana"] , var.fruit_stock["guva"]
+//}
+// variable in a combination of any other string then  it needs to be with in ${} ## ex2 ##
