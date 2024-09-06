@@ -15,6 +15,6 @@ variable "fruit_stock_with_price" {
   }
 }
 
-output "fruit_sale" {
+output "fruit_location" {
   value = "{${var.fruit_stock_with_price["apple"].location} , ${var.fruit_stock_with_price["banana"].location}}"
 }
