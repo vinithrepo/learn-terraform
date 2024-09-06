@@ -6,5 +6,5 @@ variable "fruits_with_stock" {
 }
 
 output "stock" {
-  value = try(var.fruits_with_stock["guva"], 0)
+  value = try(var.fruits_with_stock["guva"], NA)
 }
