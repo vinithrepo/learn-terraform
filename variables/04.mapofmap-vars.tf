@@ -16,5 +16,5 @@ variable "fruit_stock_with_price" {
 }
 
 output "fruit_sale" {
-  value = var.fruit_stock_with_price["apple"].for_sale
+  value = "{${var.fruit_stock_with_price["apple"].location} , ${var.fruit_stock_with_price["banana"].location}}"
 }
