@@ -1,14 +1,14 @@
 variable "ami" {
-  value = "ami-0b4f379183e5706b9"
+  default = "ami-0b4f379183e5706b9"
 }
 variable "instance_type" {
-  value = "t3.small"
+  default = "t3.small"
 }
 variable "security_groups" {
-  value = [ "sg-0ad8ec6873fafd140" ]
+  default = [ "sg-0ad8ec6873fafd140" ]
 }
 variable "zone_id" {
-  value = "Z0345275C3S6UDSOR4CU"
+  default = "Z0345275C3S6UDSOR4CU"
 }
 
 
