@@ -4,8 +4,8 @@ variable "ami" {
 variable "instance_type" {
   value = "t3.small"
 }
-variable "vpc_security_group_ids" {
-  value = ["sg-0ad8ec6873fafd140"]
+variable "security_groups" {
+  value = [ "sg-0ad8ec6873fafd140" ]
 }
 variable "zone_id" {
   value = "Z0345275C3S6UDSOR4CU"
@@ -15,7 +15,7 @@ variable "zone_id" {
 resource "aws_instance" "frontend" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "frontend"
@@ -32,7 +32,7 @@ resource "aws_route53_record" "frontend" {
 resource "aws_instance" "mongodb" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "mongodb"
@@ -48,7 +48,7 @@ resource "aws_route53_record" "mongodb" {
 resource "aws_instance" "catalogue" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "catalogue"
@@ -64,7 +64,7 @@ resource "aws_route53_record" "catalogue" {
 resource "aws_instance" "user" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "user"
@@ -80,7 +80,7 @@ resource "aws_route53_record" "user" {
 resource "aws_instance" "cart" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "cart"
@@ -97,7 +97,7 @@ resource "aws_route53_record" "cart" {
 resource "aws_instance" "redis" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "redis"
@@ -114,7 +114,7 @@ resource "aws_route53_record" "redis" {
 resource "aws_instance" "mysql" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "mysql"
@@ -132,7 +132,7 @@ resource "aws_route53_record" "mysql" {
 resource "aws_instance" "shipping" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "shipping"
@@ -149,7 +149,7 @@ resource "aws_route53_record" "shipping" {
 resource "aws_instance" "rabbitmq" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "rabbitmq"
@@ -167,7 +167,7 @@ resource "aws_route53_record" "rabbitmq" {
 resource "aws_instance" "payment" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
 
   tags = {
     Name = "payment"
@@ -184,7 +184,7 @@ resource "aws_route53_record" "payment" {
 resource "aws_instance" "dispatch" {
   ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.security_groups
   tags = {
     Name = "dispatch"
   }
