@@ -10,6 +10,6 @@ variable "fruits_details" {
 }
 
 output "looking_for" {
-  value = lookup(var.fruits_details["grapes"],"price", 9)
+  value = lookup(var.fruits_details["grapes"],"price", 9) // 9 is a return value
   //try(var.fruits_details["apple"].price, 0)
 }
