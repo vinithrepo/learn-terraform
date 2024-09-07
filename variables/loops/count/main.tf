@@ -9,5 +9,7 @@ resource "aws_instance" "instance" {
 
   tags = {
     name = ""
+    //name = var.components[count.index]
+    //name = element(var.components, count.index)
   }
 }
