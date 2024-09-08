@@ -36,7 +36,7 @@ resource "aws_instance" "instance" {
     Name = lookup(each.value,"name", null)
   }
 }
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "record" {
   zone_id = var.zone_id
   name    = "${lookup(each.value, "name", null)}.vinithaws.online"
   type    = "A"
