@@ -17,3 +17,7 @@ resource "aws_instance" "web" {
   }
 }
 variable "instance_type" {}
+
+output "instances" {
+  value = aws_instance.web
+}
