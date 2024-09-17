@@ -13,7 +13,7 @@ resource "aws_instance" "instance" {
     Name = "var.name"
   }
 }
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "record" {
   zone_id = var.zone_id
   name    = "${var.name}-dev.vinithaws.online"
   type    = "A"
