@@ -5,7 +5,7 @@ data "aws_ami" "ami" {
 }
 
 resource "aws_instance" "frontend" {
-  ami           = data.aws_ami.ami
+  ami           = data.aws_ami.ami.id
   instance_type = var.instance_type
   vpc_security_group_ids = var.security_groups
 
