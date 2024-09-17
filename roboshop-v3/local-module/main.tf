@@ -4,7 +4,7 @@ data "aws_ami" "ami" {
   owners = [ 973714476881 ]
 }
 
-resource "aws_instance" "frontend" {
+resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.id
   instance_type = var.instance_type
   vpc_security_group_ids = var.security_groups
@@ -15,10 +15,10 @@ resource "aws_instance" "frontend" {
 }
 resource "aws_route53_record" "frontend" {
   zone_id = var.zone_id
-  name    = "var.name-dev.vinithaws.online"
+  name    = "${var.name}-dev.vinithaws.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.instance.private_ip]
 }
 
 variable "instance_type" {}

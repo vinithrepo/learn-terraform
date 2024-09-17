@@ -1,8 +1,9 @@
 module "components" {
+  for_each = var.components
 
   source = "./local-module"
 
-  for_each = var.components
+
 
   zone_id = var.zone_id
   security_groups = var.security_groups
@@ -34,11 +35,29 @@ variable "components" {
       name = "user"
       instance_type = "t3.micro"
     }
-    cart = { name = "cart" , instance_type = "t3.micro" }
-    redis = { name = "redis", instance_type = "t3.micro" }
-    mysql = { name = "mysql", instance_type = "t3.micro" }
-    shipping = { name = "shipping" , instance_type = "t3.micro"}
-    rabbitmq = { name = "rabbitmq" ,instance_type = "t3.micro" }
-    payment = { name = "payment" , instance_type = "t3.micro"}
+    cart = {
+      name = "cart"
+      instance_type = "t3.micro"
+    }
+    redis = {
+      name = "redis"
+      instance_type = "t3.micro"
+    }
+    mysql = {
+      name = "mysql"
+      instance_type = "t3.micro"
+    }
+    shipping = {
+      name = "shipping"
+      instance_type = "t3.micro"
+    }
+    rabbitmq = {
+      name = "rabbitmq"
+      instance_type = "t3.micro"
+    }
+    payment = {
+      name = "payment"
+      instance_type = "t3.micro"
+    }
   }
 }
