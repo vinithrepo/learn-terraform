@@ -10,7 +10,6 @@ module "components" {
   instance_type = each.value["instance_type"]
 }
 
-
 variable "security_groups" {
   default = [ "sg-0ad8ec6873fafd140" ]
 }
