@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "tf.state.test"
-    key            = "tfvars/state.tf"
+    key            = "tfvars/state1.tf"
     region         = "us-east-1"
   }
 }
