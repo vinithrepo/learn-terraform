@@ -16,7 +16,7 @@ resource "aws_instance" "web" {
     Name = "server1"
   }
 }
-variable "instance_type" {}
+variable "instance_type" {} // declaring empty var
 
 output "instances" {
   value = aws_instance.web
