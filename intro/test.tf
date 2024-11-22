@@ -50,4 +50,6 @@ variable "fruit_details" {
 output "available_fruits" {
   value = var.fruit_details["apple"].region
 }
-
+output "orange_availability" {
+  value = var.fruit_details["orange"].available
+}
