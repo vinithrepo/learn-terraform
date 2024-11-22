@@ -65,3 +65,7 @@ variable "fruit_quantity" {
 output "apple_quantity" {
   value = var.fruit_quantity["apple"]
 }
+
+output "testing" {
+  value = "this is vinith from kolkata"
+}
