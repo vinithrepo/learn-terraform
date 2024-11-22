@@ -8,6 +8,14 @@ variable "test" {
   default = "vinith"
 }
 
-output "test" {
+output "test2" {
   value = var.test
 }
+
+variable "fruits" {
+  default = "orange"
+}
+output "fruit" {
+  value = "var.fruits"
+}
+
