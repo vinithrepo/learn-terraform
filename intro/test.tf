@@ -47,7 +47,7 @@ variable "fruit_details" {
   }
 }
 
-output "available_fruits" {
+output "apple_region" {
   value = var.fruit_details["apple"].region
 }
 output "orange_availability" {
