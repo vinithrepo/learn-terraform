@@ -73,3 +73,7 @@ output "testing" {
 output "names_a"{
   value =  element(var.names, 3)
 }
+
+output "fruits_quantity" {
+  value = " apple stock = ${var.fruit_quantity["apple"]} , banana stock = ${var.fruit_quantity["banana"]} "
+}
