@@ -27,7 +27,7 @@ variable "names" {
   ]
 }
 output "names"{
-  value =  var.names
+  value =  var.names[0]
 }
 
 
