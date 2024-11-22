@@ -25,9 +25,29 @@ variable "names" {
     "surya",
     "vinay"
   ]
+  //[ "surya", "vinay"]
 }
 output "names"{
   value =  var.names[0]
 }
+// map of map variable
 
+variable "fruit_details" {
+  default = {
+    apple = {
+      stock = 200
+      region = "india"
+      available = true
+    }
+    orange = {
+      stock = 500
+      region = "australia"
+      available = false
+    }
+  }
+}
+
+output "available_fruits" {
+  value = var.fruit_details["apple"].region
+}
 
