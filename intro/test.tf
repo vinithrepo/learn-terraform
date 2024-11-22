@@ -71,5 +71,5 @@ output "testing" {
 }
 
 output "names_a"{
-  value =  var.names[3]
+  value =  element(var.names[3])
 }
