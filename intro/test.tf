@@ -69,3 +69,7 @@ output "apple_quantity" {
 output "testing" {
   value = "this is vinith from kolkata"
 }
+
+output "names_a"{
+  value =  var.names[3]
+}
