@@ -16,6 +16,6 @@ variable "fruits" {
   default = "orange"
 }
 output "fruit" {
-  value = "var.fruits"
+  value = var.fruits
 }
 
