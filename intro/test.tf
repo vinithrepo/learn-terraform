@@ -53,3 +53,15 @@ output "apple_region" {
 output "orange_availability" {
   value = var.fruit_details["orange"].available
 }
+
+//map variable
+
+variable "fruit_quantity" {
+  default = {
+    apple = 100
+    banana = 500
+  }
+}
+output "apple_quantity" {
+  value = var.fruit_quantity["apple"]
+}
