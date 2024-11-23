@@ -9,7 +9,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
-resource "aws_route53_record" "record" {
+resource "aws_route53_record" "frontend" {
   name    = "frontend"
   type    = "A"
   zone_id = "Z0345275C3S6UDSOR4CU"
@@ -27,7 +27,7 @@ resource "aws_instance" "mongodb" {
   }
 }
 
-  resource "aws_route53_record" "record" {
+  resource "aws_route53_record" "mongodb" {
     name    = "mongodb.vinithaws.online"
     type    = "A"
     zone_id = "Z0345275C3S6UDSOR4CU"
