@@ -6,3 +6,7 @@ resource "aws_instance" "web" {
     Name = "frontend"
   }
 }
+
+output "fronten_instance" {
+  value = aws_instance.web
+}
