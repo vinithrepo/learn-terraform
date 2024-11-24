@@ -1,3 +1,6 @@
+variable "fruits" {
+    default = ["apple","orange"]
+}
 output "test" {
-    value = "Hello world"
+    value = element(var.fruits,1)
 }
