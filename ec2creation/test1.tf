@@ -17,5 +17,5 @@ variable "fruits_map" {
 }
 
 output "test3" {
-    value = try(var.fruits_map["banana"], NA)
+    value = try(var.fruits_map["banana"], "NA")
 }
