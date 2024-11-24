@@ -36,6 +36,7 @@ variable "fruits_map_of_map" {
 output "test4" {
     value = lookup(var.fruits_map_of_map["apple"],"price" ,"na")
 }
+
 output "test5" {
     value = lookup(var.fruits_map_of_map["banana"],"stock" ,"na")
 }
