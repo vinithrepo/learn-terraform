@@ -40,3 +40,6 @@ output "test4" {
 output "test5" {
     value = lookup(var.fruits_map_of_map["banana"],"stock" ,"na")
 }
+output "test6" {
+    value = lookup(var.fruits_map_of_map["orange"],"stock" ,"na")
+}
