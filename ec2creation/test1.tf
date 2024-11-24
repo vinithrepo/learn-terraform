@@ -6,8 +6,7 @@ output "test" {
 
 }
 output "test2" {
-    //value = try(var.fruits["juice"], 0)
-    value = lookup(var.fruits[6], "na")
+    value = try(var.fruits["juice"], 0)
 }
 
 variable "fruits_map" {
@@ -18,6 +17,25 @@ variable "fruits_map" {
 }
 
 output "test3" {
-    //value = try(var.fruits_map["banana"], "NA")
-    value =  lookup(var.fruits_map["apple"], "NA")
+    value = try(var.fruits_map["banana"], "NA")
+}
+
+variable "fruits_map_of_map" {
+    default = {
+        apple = {
+         stock = 200
+         price = 2
+        }
+        banana = {
+            stock = "Not Available"
+            price = 1
+        }
+    }
+}
+
+output "test4" {
+    value = lookup(var.fruits_map_of_map["apple"],"price" ,"na")
+}
+output "test5" {
+    value = lookup(var.fruits_map_of_map["banana"],"stock" ,"na")
 }
