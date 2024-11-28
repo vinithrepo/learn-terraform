@@ -16,7 +16,7 @@ variable "components" {
     }
   }
 }
-resource "aws_instance" "mongodb" {
+resource "aws_instance" "instance" {
   for_each = var.components
   ami           = var.ami_id
   instance_type = each.value["instance_type"]
