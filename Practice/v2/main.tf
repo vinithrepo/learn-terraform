@@ -33,16 +33,13 @@ resource "aws_instance" "instance" {
     //each.value["name"]
   }
 }
-#resource "aws_route53_record" "record" {
-#  for_each = var.components
-#  name    = "${lookup(each.value,"name" ,"NA")}.vinithaws.online"
-#  type    = "A"
-#  zone_id = var.zone_id
-#  ttl = 30
-#  records = [ lookup( aws_instance.instance, each.key  , "NA" ]
-#    // lookup(lookup(aws_instance.instance,each.key, null ),"private_ip", null)
-#}
-
-output "test4" {
-  value = aws_instance.instance
+resource "aws_route53_record" "record" {
+  for_each = var.components
+  name    = "${lookup(each.value,"name" ,"NA")}.vinithaws.online"
+  type    = "A"
+  zone_id = var.zone_id
+  ttl = 30
+  records = [ lookup(lookup(aws_instance.instance,each.key, null ),"private_ip", null) ]
+    // lookup(lookup(aws_instance.instance,each.key, null ),"private_ip", null)
 }
+
