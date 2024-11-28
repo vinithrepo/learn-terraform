@@ -24,7 +24,7 @@ resource "aws_instance" "instance" {
 
 
   tags = {
-    Name = lookup(each.value, "name" , NA)
+    Name = lookup(each.value , "name", "NA")
     //each.value["name"]
   }
 }
