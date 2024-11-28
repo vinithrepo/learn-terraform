@@ -66,6 +66,6 @@ variable "components" {
 }
 
 output "test13" {
-    for_each = var.components
+
     value = lookup(var.components.key, "name" , null )
 }
