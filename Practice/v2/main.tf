@@ -43,3 +43,6 @@ resource "aws_instance" "instance" {
 #    // lookup(lookup(aws_instance.instance,each.key, null ),"private_ip", null)
 #}
 
+output "test4" {
+  value = aws_instance.instance
+}
