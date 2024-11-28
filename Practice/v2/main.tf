@@ -4,6 +4,9 @@ variable "ami_id" {
 variable "vpc_security_group_ids" {
   default = ["sg-0ad8ec6873fafd140"]
 }
+variable "zone_id" {
+  default = "Z0345275C3S6UDSOR4CU"
+}
 variable "components" {
   default = {
     frontend = {
@@ -24,12 +27,19 @@ resource "aws_instance" "instance" {
 
 
   tags = {
-    Name = each.key
+    Name = lookup(each.value , "name", "NA")
     //lookup(var.components, each.value["name"], "na" )
     //lookup(each.value , "name", "NA")
     //each.value["name"]
   }
 }
-output "test" {
-  value = aws_instance.instance
+resource "aws_route53_record" "record" {
+  for_each = var.components
+  name    = "${lookup(each.value,"name" ,"NA")}.vinithaws.online"
+  type    = "A"
+  zone_id = var.zone_id
+  ttl = 30
+  records = [ lookup(aws_instance.instance,each.key, "NA" ]
+    // lookup(lookup(aws_instance.instance,each.key, null ),"private_ip", null)
 }
+
