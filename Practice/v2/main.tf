@@ -30,3 +30,6 @@ resource "aws_instance" "instance" {
     //each.value["name"]
   }
 }
+output "test" {
+  value = aws_instance.instance
+}
