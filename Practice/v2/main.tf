@@ -39,7 +39,7 @@ resource "aws_route53_record" "record" {
   type    = "A"
   zone_id = var.zone_id
   ttl = 30
-  records = [ lookup(aws_instance.instance,each.key, "NA" ]
+  records = [ lookup( aws_instance.instance, each.key  , "NA" ]
     // lookup(lookup(aws_instance.instance,each.key, null ),"private_ip", null)
 }
 
