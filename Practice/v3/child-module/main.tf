@@ -26,6 +26,3 @@ variable "components" {
   }
 }
 
-output "test2" {
-  value = aws_instance.instance
-}
