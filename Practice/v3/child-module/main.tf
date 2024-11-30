@@ -8,4 +8,11 @@ resource "aws_instance" "instance" {
     Name = var.name
   }
 }
+resource "aws_route53_record" "record" {
+  name    = "${var.name}-dev.vinithaws.online"
+  type    = "A"
+  zone_id = var.zone_id
+  ttl = 30
+  records = [aws_instance.instance.private_ip]
+}
 
