@@ -15,4 +15,15 @@ resource "aws_route53_record" "record" {
   ttl = 30
   records = [aws_instance.instance.private_ip]
 }
+resource "null_resource" "ansible" {
+  depends_on = [aws_route53_record.record]
+  provisioner "local-exec" {
+    command = << EOF
+  cd /home/centos/roboshop-ansible
+  git pull
+  sleep 60
+  ansible-playbook -i ${var.name}-dev.vinithaws.online, main.yml -e ansible_user=centos -e ansible_password=evOps321 -e component = ${var.name}
+EOF
+  }
+}
 
