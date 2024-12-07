@@ -10,13 +10,13 @@ variable "vpc_security_group_ids" {
 variable "zone_id" {
   default = "Z0345275C3S6UDSOR4CU"
 }
-
+////////////////////////
+////////////////////////
 resource "aws_instance" "frontend" {
   ami           = var.ami_id
   instance_type = var.instance_type
   vpc_security_group_ids = var.vpc_security_group_ids
-
-
+  
   tags = {
     Name = "frontend"
   }

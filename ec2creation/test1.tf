@@ -67,5 +67,5 @@ variable "components" {
 
 output "test13" {
 
-    value = lookup(var.components.key, "name" , null )
+    value = lookup(var.components["dev"], "name" , null )
 }
