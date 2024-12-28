@@ -12,8 +12,8 @@ variable "test12" {
 }
 resource "null_resource" "yes" {
   for_each = var.test12
-  ami = each.value["name"]
-  type = each.value["type"]
+  ravi = each.value["name"]
+  surya = each.value["type"]
 
 }
 output "op" {
