@@ -10,12 +10,12 @@ variable "test12" {
     }
   }
 }
-resource "null_resource" "yes" {
+resource "aws_instance" "yes" {
   for_each = var.test12
-  ravi = each.value["name"]
-  surya = each.value["type"]
+  ami = each.value["name"]
+  instance_type = each.value["type"]
 
 }
 output "op" {
-  value = null_resource.yes
+  value = aws_instance.yes
 }
