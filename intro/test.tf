@@ -16,3 +16,6 @@ resource "null_resource" "yes" {
   type = each.value["type"]
 
 }
+output "op" {
+  value = null_resource.yes
+}
