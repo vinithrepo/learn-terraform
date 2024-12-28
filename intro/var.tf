@@ -1,11 +1,11 @@
 variable "test11" {
   default = {
   frontend = {
-    name = devs
+    name = "dev"
     type = "t2"
   }
   user = {
-    name = prods
+    name = "prod"
     type = "t5"
   }
 }
