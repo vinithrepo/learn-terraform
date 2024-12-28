@@ -9,7 +9,10 @@ variable "test11" {
     type = "t5"
   }
 }}
+
 output "test18" {
   value = var.test11
-
+}
+output "var" {
+  value = "this is vinith"
 }
