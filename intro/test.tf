@@ -79,5 +79,5 @@ output "fruits_quantity" {
 }
 
 output "fruit_quantity" {
-  value =  apple stock = var.fruit_quantity["apple"] , banana stock = var.fruit_quantity["banana"]
+  value =  "apple stock = ${var.fruit_quantity["apple"]} , banana stock = ${var.fruit_quantity["banana"]} "
 }
