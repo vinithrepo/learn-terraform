@@ -1,4 +1,5 @@
 variable "test11" {
+  default = {
   frontend = {
     name = dev
     type = "t2"
@@ -10,4 +11,5 @@ variable "test11" {
 }
 output "test11" {
   value = var.test11
+}
 }
