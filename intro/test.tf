@@ -1,83 +1,18 @@
-//1
-output "xyz" {
-  value = "Hello world"
-}
-
-//2
-variable "test" {
-  default = "vinith"
-}
-
-output "test2" {
-  value = var.test
-}
-//3 string variable com plain variable
-variable "fruits" {
-  default = "orange"
-}
-output "fruit" {
-  value = var.fruits
-}
-//4 List variable
-
-variable "names" {
-  default = [
-    "surya",
-    "vinay"
-  ]
-  //[ "surya", "vinay"]
-}
-output "names"{
-  value =  var.names[0]
-}
-// map of map variable
-
-variable "fruit_details" {
+variable "test12" {
   default = {
-    apple = {
-      stock = 200
-      region = "india"
-      available = true
+    frontend = {
+      name = "dev"
+      type = "t2"
     }
-    orange = {
-      stock = 500
-      region = "australia"
-      available = false
+    user = {
+      name = "prod"
+      type = "t5"
     }
   }
 }
+resource "null_resource" "yes" {
+  for_each = var.test12
+  ami = each.value["name"]
+  type = each.value["type"]
 
-output "apple_region" {
-  value = var.fruit_details["apple"].region
-}
-output "orange_availability" {
-  value = var.fruit_details["orange"].available
-}
-
-//map variable
-
-variable "fruit_quantity" {
-  default = {
-    apple = 100
-    banana = 500
-  }
-}
-output "apple_quantity" {
-  value = var.fruit_quantity["apple"]
-}
-
-output "testing" {
-  value = "this is vinith from kolkata"
-}
-
-output "names_a"{
-  value =  element(var.names, 3)
-}
-
-output "fruits_quantity" {
-  value = " apple stock = ${var.fruit_quantity["apple"]} , banana stock = ${var.fruit_quantity["banana"]} "
-}
-
-output "fruit_quantity" {
-  value =  "apple stock = ${var.fruit_quantity["apple"]} , banana stock = ${var.fruit_quantity["banana"]} "
 }
