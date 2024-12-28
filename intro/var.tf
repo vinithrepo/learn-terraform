@@ -8,7 +8,6 @@ variable "test11" {
     type = "t5"
   }
 }
-
 output "test11" {
   value = var.test11
 }
