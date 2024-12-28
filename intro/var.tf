@@ -18,5 +18,5 @@ output "var" {
   value = "this is vinith"
 }
 output "test20" {
-  value = var.test11.frontend
+  value = var.test11.frontend["name"]
 }
