@@ -8,7 +8,8 @@ variable "test11" {
     name = prod
     type = "t5"
   }
-}}
+}
+}
 
 output "test18" {
   value = var.test11
