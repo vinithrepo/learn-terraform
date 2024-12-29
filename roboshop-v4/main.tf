@@ -8,3 +8,6 @@ module "components" {
   name  = var.name
 
 }
+output "compenents" {
+  value = module.components
+}
