@@ -5,9 +5,10 @@ module "components" {
 
   instance_type = var.instance_type
   vpc_security_group_ids = var.vpc_security_group_ids
-  name  = var.name
+    name  = var.name
 
 }
+
 output "compenents" {
   value = module.components
 }
