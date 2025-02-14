@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "sbucket83"
+    bucket         = "qwerty83"
     key            = "tfvars/state1.tf"
     region         = "us-east-1"
   }

@@ -3,9 +3,9 @@ module "components" {
 
   source = "./v4"
 
-  instance_type = var.instance_type
+  instance_type = each.value["instance_type"]
   vpc_security_group_ids = var.vpc_security_group_ids
-    name  = var.name
+  name  = each.value["name"]
 
 }
 
