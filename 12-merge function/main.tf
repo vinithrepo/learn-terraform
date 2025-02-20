@@ -21,5 +21,5 @@ variable "vpc" {
   }
 }
 output "all_subnets" {
-  value = var.vpc
+  value = var.vpc["main"]
 }
