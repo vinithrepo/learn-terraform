@@ -1,7 +1,7 @@
 module "components" {
   for_each = var.components
 
-  source = "./v4"
+  source = "./newestation" #v4
 
   instance_type = each.value["instance_type"]
   vpc_security_group_ids = var.vpc_security_group_ids
