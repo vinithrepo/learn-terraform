@@ -1,4 +1,4 @@
-security_groups = [ "sg-0ad8ec6873fafd140" ]
+vpc_security_group_ids = [ "sg-0ad8ec6873fafd140" ]
 
 #zone_id = "Z0345275C3S6UDSOR4CU"
 
