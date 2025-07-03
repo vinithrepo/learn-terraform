@@ -1,4 +1,4 @@
-module "components" {
+module "newestation" {
   for_each = var.components
 
   source = "./newestation" #v4
@@ -7,8 +7,4 @@ module "components" {
   vpc_security_group_ids = var.vpc_security_group_ids
   name  = each.value["name"]
 
-}
-
-output "compenents" {
-  value = module.components
 }
